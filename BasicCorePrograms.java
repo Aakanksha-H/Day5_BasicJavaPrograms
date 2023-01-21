@@ -5,34 +5,24 @@ import java.util.Scanner;
 public class BasicCorePrograms {
     public static void main(String[] args) {
         System.out.println("Welcome to java basic programs");
-        flipCoin();
+        functionLeapYear();
     }
 
-    public static void flipCoin(){
-        int coinFlipNumber = 0, head = 0, tail = 0, percentTail = 0, percentHead = 0;
-
-        System.out.println("Number of times to flip coin");
+    public static void functionLeapYear() {
+        System.out.println("Enter the year \n" + "Hint : Please ensure its a four digit number!");
         Scanner sc = new Scanner(System.in);
-        coinFlipNumber = (int) sc.nextDouble();
-
-        if (coinFlipNumber < 0) {
-            System.out.println("Number of times to flip coin should be positive");
-        }
-
-        for (int input = 0; input < coinFlipNumber; input++) {
-            double flipCoin = Math.round(Math.random() * 10) % 2;
-            if (flipCoin > 0.5) {
-                System.out.println("You have got the tail");
-                tail++;
-            } else {
-                System.out.println("You have got the heads");
-                head++;
-            }
-        }
-
-        percentHead = (int) ((double) head / coinFlipNumber * 100);
-        System.out.println("Percent of heads count is " + percentHead + "%");
-        percentTail = (int) ((double) tail / coinFlipNumber * 100);
-        System.out.println("Percent of tails count is " + percentTail + "%");
+        boolean leap;
+        int year = sc.nextInt();
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                leap = year % 400 == 0;
+            } else
+                leap = true;
+        } else
+            leap = false;
+        if (leap)
+            System.out.println(year + " is a leap year.");
+        else
+            System.out.println(year + " is not a leap year.");
     }
 }
