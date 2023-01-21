@@ -5,24 +5,21 @@ import java.util.Scanner;
 public class BasicCorePrograms {
     public static void main(String[] args) {
         System.out.println("Welcome to java basic programs");
-        functionLeapYear();
+        powerOfTwo();
     }
 
-    public static void functionLeapYear() {
-        System.out.println("Enter the year \n" + "Hint : Please ensure its a four digit number!");
-        Scanner sc = new Scanner(System.in);
-        boolean leap;
-        int year = sc.nextInt();
-        if (year % 4 == 0) {
-            if (year % 100 == 0) {
-                leap = year % 400 == 0;
-            } else
-                leap = true;
-        } else
-            leap = false;
-        if (leap)
-            System.out.println(year + " is a leap year.");
-        else
-            System.out.println(year + " is not a leap year.");
+    public static void powerOfTwo(){
+        System.out.println("Enter the value of power");
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        if (0 <= n && n < 31) {
+            for (int i = 1; i <= n; i++) {
+                int power = (int) Math.pow(2, i);
+                System.out.println(power);
+            }
+        } else {
+            System.out.println("Enter only numbers between 0 and 31");
+        }
     }
 }
