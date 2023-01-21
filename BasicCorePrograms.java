@@ -5,21 +5,22 @@ import java.util.Scanner;
 public class BasicCorePrograms {
     public static void main(String[] args) {
         System.out.println("Welcome to java basic programs");
-        powerOfTwo();
+        harmonicNumber();
     }
 
-    public static void powerOfTwo(){
-        System.out.println("Enter the value of power");
+    public static void harmonicNumber() {
+        System.out.println("Enter the value of n");
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
+        double harmonicNumber = 0;
 
-        if (0 <= n && n < 31) {
-            for (int i = 1; i <= n; i++) {
-                int power = (int) Math.pow(2, i);
-                System.out.println(power);
+        if (n > 0) {
+            for (int i = n; i > 0; i--) {
+                harmonicNumber = harmonicNumber + ((double) 1 / (double) n);
+                System.out.println(harmonicNumber);
             }
         } else {
-            System.out.println("Enter only numbers between 0 and 31");
+            System.out.println("Enter only numbers greater than 0");
         }
     }
 }
