@@ -5,20 +5,17 @@ import java.util.Scanner;
 public class BasicCorePrograms {
     public static void main(String[] args) {
         System.out.println("Welcome to java basic programs");
-        oddOrEven();
+        alphabateOrVowel();
     }
 
-    public static void oddOrEven() {
+    public static void alphabateOrVowel() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the value of number");
-        int number = scanner.nextInt();
-
-        if (number % 2 == 0){
-            System.out.println("The number is even");
-        } else if (number < 0){
-            System.out.println("The number is negative, please enter positive number");
+        System.out.println("Enter the charecter");
+        char charecter = scanner.next().charAt(0);
+        if (charecter == 'a' || charecter == 'e' || charecter == 'i' || charecter == 'o' || charecter == 'u' ){
+            System.out.println("This is charecter");
         } else {
-            System.out.println("The number is odd");
+            System.out.println("This is alphabate");
         }
     }
 }
