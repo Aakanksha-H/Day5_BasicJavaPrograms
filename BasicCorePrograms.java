@@ -5,17 +5,22 @@ import java.util.Scanner;
 public class BasicCorePrograms {
     public static void main(String[] args) {
         System.out.println("Welcome to java basic programs");
-        alphabateOrVowel();
+        logestAmongstThree();
     }
 
-    public static void alphabateOrVowel() {
+    public static void logestAmongstThree() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the charecter");
-        char charecter = scanner.next().charAt(0);
-        if (charecter == 'a' || charecter == 'e' || charecter == 'i' || charecter == 'o' || charecter == 'u' ){
-            System.out.println("This is charecter");
-        } else {
-            System.out.println("This is alphabate");
-        }
+        System.out.println("Enter the first number");
+        int firstNumber = scanner.nextInt();
+        System.out.println("Enter the second number");
+        int secondNumber = scanner.nextInt();
+        System.out.println("Enter the third number");
+        int thirdNumber = scanner.nextInt();
+
+        String longets = (firstNumber > secondNumber && firstNumber > thirdNumber) ? "First is longest"
+                : (secondNumber > firstNumber && secondNumber > thirdNumber) ? "Second number is longets"
+                : "Third number is longest" ;
+
+        System.out.println(longets);
     }
 }
