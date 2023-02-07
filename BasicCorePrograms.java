@@ -5,19 +5,20 @@ import java.util.Scanner;
 public class BasicCorePrograms {
     public static void main(String[] args) {
         System.out.println("Welcome to java basic programs");
-        harmonicNumber();
+        factorOfNumber();
     }
 
-    public static void harmonicNumber() {
+    public static void factorOfNumber() {
         System.out.println("Enter the value of n");
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        double harmonicNumber = 0;
 
         if (n > 0) {
-            for (int i = n; i > 0; i--) {
-                harmonicNumber = harmonicNumber + ((double) 1 / (double) n);
-                System.out.println(harmonicNumber);
+            System.out.print( "The factors of number entered are " + '\n');
+            for (int i = 1; i <= n; ++i) {
+                if (n % i == 0) {
+                    System.out.print( i + " ,");
+                }
             }
         } else {
             System.out.println("Enter only numbers greater than 0");
