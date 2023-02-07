@@ -5,23 +5,20 @@ import java.util.Scanner;
 public class BasicCorePrograms {
     public static void main(String[] args) {
         System.out.println("Welcome to java basic programs");
-        factorOfNumber();
+        quotientAndReminder();
     }
 
-    public static void factorOfNumber() {
-        System.out.println("Enter the value of n");
+    public static void quotientAndReminder() {
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
+        System.out.println("Enter the value of dividend");
+        int dividend = scanner.nextInt();
+        System.out.println("Enter the value of divisor");
+        int divisor = scanner.nextInt();
 
-        if (n > 0) {
-            System.out.print( "The factors of number entered are " + '\n');
-            for (int i = 1; i <= n; ++i) {
-                if (n % i == 0) {
-                    System.out.print( i + " ,");
-                }
-            }
-        } else {
-            System.out.println("Enter only numbers greater than 0");
-        }
+        int quotient = dividend / divisor;
+        int remainder = dividend % divisor;
+
+        System.out.println("The value of quotient is " + quotient);
+        System.out.println("The value of remainder is " + remainder);
     }
 }
