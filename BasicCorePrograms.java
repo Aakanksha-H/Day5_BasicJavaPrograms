@@ -5,22 +5,20 @@ import java.util.Scanner;
 public class BasicCorePrograms {
     public static void main(String[] args) {
         System.out.println("Welcome to java basic programs");
-        swapTwoNumbers();
+        oddOrEven();
     }
 
-    public static void swapTwoNumbers() {
+    public static void oddOrEven() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the value of first number");
-        int firstNumber = scanner.nextInt();
-        System.out.println("Enter the value of second number");
-        int secondNumber = scanner.nextInt();
+        System.out.println("Enter the value of number");
+        int number = scanner.nextInt();
 
-        int tempVariable = firstNumber;
-        firstNumber =  secondNumber;
-        secondNumber = tempVariable;
-
-
-        System.out.println("After swap the value of first number is " + firstNumber);
-        System.out.println("After swap the value of second number is  " + secondNumber);
+        if (number % 2 == 0){
+            System.out.println("The number is even");
+        } else if (number < 0){
+            System.out.println("The number is negative, please enter positive number");
+        } else {
+            System.out.println("The number is odd");
+        }
     }
 }
